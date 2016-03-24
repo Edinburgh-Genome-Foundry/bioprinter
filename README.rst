@@ -59,7 +59,7 @@ Then write the following code in `dolly.py`:
 
 Execute in a terminal with `python dolly.py`. This will produce a `dolly.csv` file as well as a preview image of the final printing (so that you can check if the image looks good at this low resolution)
 
-Prepare a source plate with the right pigmented yeasts in wells A1, A2, A3, use an agar plate as the destination plate, and feed `dolly.csv` to the Echo. Once the printing is finished, incubate 2 days at 30C (it would be one day at 37C for bacteria). Enjoy the result !
+Prepare a source plate with the right pigmented yeasts in wells A1, A2, A3, use an agar plate as the destination plate, and feed `dolly.csv` to the `Labcyte Echo <http://www.labcyte.com/products/liquidhandling/echo-555-liquid-handler>`_. Once the printing is finished, incubate 2 days at 30C (it would be one day at 37C for bacteria). Enjoy the result !
 
 
 .. _here: http://edinburgh-genome-foundry.github.io/bioprinter/
