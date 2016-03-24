@@ -20,7 +20,7 @@ from skimage.transform import resize
 from skimage.color import rgb2lab
 
 
-def rownumber_to_rowname(num):
+def _rownumber_to_rowname(num):
     """Return the row name corresponding to the row number.
 
     For instance 0-> A, 1->B, 2->C, ... 26->AA, 27->AB, ... etc.
@@ -28,8 +28,8 @@ def rownumber_to_rowname(num):
     if num < 26:
         return "ABCDEFGHIJKLMNOPQRSTUVWXYZ"[num]
     else:
-        return "".join([rownumber_to_rowname(num / 26 - 1),
-                        rownumber_to_rowname(num % 26)])
+        return "".join([_rownumber_to_rowname(num / 26 - 1),
+                        _rownumber_to_rowname(num % 26)])
 
 
 def bioprint(image_filename, output_filename, bg_color, pigments_wells,
@@ -166,7 +166,7 @@ def bioprint(image_filename, output_filename, bg_color, pigments_wells,
                 if color != 0:
                     writer.writerow([
                         pigments_wells[color-1],  # source well
-                        rownumber_to_rowname(i) + str(j+1),  # target "well"
+                        _rownumber_to_rowname(i) + str(j+1),  # target "well"
                         transfer_volume])
 
     # ESTIMATE THE PRINTING TIME

@@ -13,4 +13,4 @@ setup(name='BioPrinter',
       license='see LICENSE.txt',
       keywords="bioprinter pointillism",
       packages=find_packages(exclude='docs'),
-      install_requires=['numpy', 'skimage'])
+      install_requires=['numpy', 'scikit-image'])
