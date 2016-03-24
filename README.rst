@@ -18,6 +18,7 @@ Here are two examples of bio-art:
 
 
 Bioprinter was written at the Edinburgh Genome Foundry by Zulko_ after an original idea and Matlab code by Mike Shen (`the project on Github <https://github.com/mshen5/BioPointillism>`_).
+
 Bioprinter is released on Github_ under the MIT licence (¢ Edinburgh Genome Foundry), everyone is welcome to contribute !
 
 
@@ -56,12 +57,11 @@ Then write the following code in `dolly.py`:
         quantified_image_filename="dolly_preview.jpeg"
     )
 
-Execute in a terminal with `python dolly.py`. This will produce a `dolly.csv` file as well as a preview image of the final printing (so that you can check if the image looks good at this low resolution).
-
-.. figure:: images/dolly_preview.png
-    :align: center
+Execute in a terminal with `python dolly.py`. This will produce a `dolly.csv` file as well as a preview image of the final printing (so that you can check if the image looks good at this low resolution)
 
 Prepare a source plate with the right pigmented yeasts in wells A1, A2, A3, use an agar plate as the destination plate, and feed `dolly.csv` to the Echo. Once the printing is finished, incubate 2 days at 30C (it would be one day at 37C for bacteria). Enjoy the result !
 
 
 .. _here:: http://edinburgh-genome-foundry.github.io/bioprinter/
+.. _Zulko: https://github.com/Zulko/
+.. _Github: https://github.com/Edinburgh-Genome-Foundry/bioprinter

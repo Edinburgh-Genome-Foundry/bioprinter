@@ -35,6 +35,7 @@ Here are two examples of bio-art:
 
 Bioprinter was written at the Edinburgh Genome Foundry by Zulko_ after an original idea and Matlab code by Mike Shen (`the project on Github <https://github.com/mshen5/BioPointillism>`_).
 
+
 Bioprinter is released on Github_ under the MIT licence (¢ Edinburgh Genome Foundry). Everyone is welcome to contribute.
 
 
