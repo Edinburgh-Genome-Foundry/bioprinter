@@ -33,10 +33,10 @@ Here are two examples of bio-art:
     England flag drawn with 3 different strains of the bacterium *E. coli*.
 
 
-Bioprinter was written at the Edinburgh Genome Foundry by Zulko_ after an original idea and Matlab code by Mike Shen (`the project on Github <https://github.com/mshen5/BioPointillism>`_).
+Bioprinter is released on Github_ under the MIT licence (¢ Edinburgh Genome Foundry), everyone is welcome to contribute !
 
+Bioprinter was written at the Edinburgh Genome Foundry by Zulko_ after an original idea and Matlab code by Mike Shen (`Mike's project on Github <https://github.com/mshen5/BioPointillism>`_).
 
-Bioprinter is released on Github_ under the MIT licence (¢ Edinburgh Genome Foundry). Everyone is welcome to contribute.
 
 
 
