@@ -83,7 +83,7 @@
                 <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Bioprinter</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a></li>
-<li><a class="reference internal" href="#example-of-code">Example of code</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
 <li><a class="reference internal" href="#reference-manual">Reference manual</a></li>
 </ul>
 </li>
@@ -133,13 +133,26 @@
             
   <div class="section" id="bioprinter">
 <h1>Bioprinter<a class="headerlink" href="#bioprinter" title="Permalink to this headline">¶</a></h1>
-<p>Print images with colored bacteria and yeast.</p>
-<p>This implements the <cite>bioprint</cite> function, which takes an image and writes a CSV
-file that the Labcyte Echo dispenser can use to print the pictures on a plate
-using yeast, coli, ...</p>
-<p>Written by Valentin for the Edinburgh Genome Foundry. The code is released on <a class="reference external" href="https://github.com/Edinburgh-Genome-Foundry/bioprinter">Github</a> under the MIT licence. Everyone is welcome to contribute.</p>
-<p>Original idea and Matlab code by Mike Shen:
-<a class="reference external" href="https://github.com/mshen5/BioPointillism">https://github.com/mshen5/BioPointillism</a></p>
+<a href="https://twitter.com/share" class="twitter-share-button"
+data-text="MoviePy - Video editing with Python" data-size="large" data-hashtags="Bioprinting">Tweet
+</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+<iframe src="http://ghbtns.com/github-btn.html?user=Edinburgh-Genome-Foundry&repo=bioprinter&type=watch&count=true&size=large"
+allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px" margin-bottom="30px"></iframe><p>Bioprinter is a Python module to produce living art. It transforms an image into files that a liquid dispenser can use to <em>print</em> the image to a plate using pigmented yeast or bacteria.</p>
+<p>Here are two examples of bio-art:</p>
+<div class="figure align-center" id="id1">
+<img alt="_images/bioprint_dolly.jpeg" src="_images/bioprint_dolly.jpeg" />
+<p class="caption"><span class="caption-text">Dolly drawn with baker yeast (white), violacein-producing yeast (black), and carotene-producing yeast (orange)</span></p>
+</div>
+<div class="figure align-center" id="id2">
+<img alt="_images/bioprint_england.jpeg" src="_images/bioprint_england.jpeg" />
+<p class="caption"><span class="caption-text">England flag drawn with 3 different strains of the bacterium <em>E. coli</em>.</span></p>
+</div>
+<p>Bioprinter was written at the Edinburgh Genome Foundry by <a class="reference external" href="https://github.com/Zulko/">Zulko</a> after an original idea and Matlab code by Mike Shen (<a class="reference external" href="https://github.com/mshen5/BioPointillism">the project on Github</a>).</p>
+<p>Bioprinter is released on <a class="reference external" href="https://github.com/Edinburgh-Genome-Foundry/bioprinter">Github</a> under the MIT licence (¢ Edinburgh Genome Foundry). Everyone is welcome to contribute.</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>If you have PIP installed:</p>
@@ -151,11 +164,105 @@ using yeast, coli, ...</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="example-of-code">
-<h2>Example of code<a class="headerlink" href="#example-of-code" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>In the same folder as your code, place an image. It can have any resolution, but keep in mind that the width/height ratio of the plate it is printed on is 1.5. Make sure that a specific color is used to mark the un-pigmented background of the image, here we use blue:</p>
+<div class="figure align-center">
+<img alt="_images/dolly.jpeg" src="_images/dolly.jpeg" />
+</div>
+<p>Then write the following code in <cite>dolly.py</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">bioprinter</span> <span class="kn">import</span> <span class="n">bioprint</span>
+
+<span class="n">bioprint</span><span class="p">(</span>
+    <span class="n">image_filename</span><span class="o">=</span><span class="s">&quot;../docs/images/dolly.jpeg&quot;</span><span class="p">,</span>
+    <span class="n">output_filename</span><span class="o">=</span><span class="s">&quot;dolly.csv&quot;</span><span class="p">,</span>
+    <span class="n">bg_color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="c"># blue background represents empty wells</span>
+    <span class="n">pigments_wells</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;A1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>  <span class="c"># black yeast in source well A1</span>
+                    <span class="s">&quot;A2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">250</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>  <span class="c"># orange yeast in well A2</span>
+                    <span class="s">&quot;A3&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">]},</span>  <span class="c"># white yeast in well A3</span>
+    <span class="n">quantified_image_filename</span><span class="o">=</span><span class="s">&quot;dolly_preview.jpeg&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Execute in a terminal with <cite>python dolly.py</cite>. This will produce a <cite>dolly.csv</cite> file as well as a preview image of the final printing (so that you can check if the image looks good at this low resolution).</p>
+<div class="figure align-center">
+<img alt="_images/dolly_preview.png" src="_images/dolly_preview.png" />
+</div>
+<p>Prepare a source plate with the right pigmented yeasts in wells A1, A2, A3, use an agar plate as the destination plate, and feed <cite>dolly.csv</cite> to the Echo. Once the printing is finished, incubate 2 days at 30C (it would be one day at 37C for bacteria). Enjoy the result !</p>
 </div>
 <div class="section" id="reference-manual">
 <h2>Reference manual<a class="headerlink" href="#reference-manual" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="bioprinter.bioprint">
+<code class="descclassname">bioprinter.</code><code class="descname">bioprint</code><span class="sig-paren">(</span><em>image_filename</em>, <em>output_filename</em>, <em>bg_color</em>, <em>pigments_wells</em>, <em>resolution=(192</em>, <em>128)</em>, <em>transfer_volume=2.5</em>, <em>pigment_well_capacity=25000</em>, <em>transfer_rate=150</em>, <em>quantified_image_filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bioprinter/bioprinter.html#bioprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bioprinter.bioprint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a CSV that can be used in the Echo to print the given picture.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>image_filename</strong></p>
+<blockquote>
+<div><p>The path the image file to be printed. Can be virtually any size
+and file format, but make sure the image is well adapted to low
+resolution yeast printing. If the picture is higher than wide it will
+be automatically rotated 90 degrees so as to maximize its resolution on
+the plate (the image aspect ratio is conserved).</p>
+</div></blockquote>
+<p><strong>output_filename</strong></p>
+<blockquote>
+<div><p>The name of the CSV file written by the function, that will then
+be fed to the Echo.</p>
+</div></blockquote>
+<p><strong>bg_color</strong></p>
+<blockquote>
+<div><p>A triplet (R,G,B) of 0-255 integers indicating which color
+of the original image represents the background (no pigment)</p>
+</div></blockquote>
+<p><strong>pigments_wells</strong></p>
+<blockquote>
+<div><p>A dictionary of well names and the corresponding pigments. For
+instance {&#8220;A1&#8221;: [0,10,20], &#8220;B1&#8221;:...}. Only one well per pigment
+is currently supported.</p>
+</div></blockquote>
+<p><strong>resolution</strong></p>
+<blockquote>
+<div><p>Resolution (width, height) of the printing plate. You must define a
+plate with these exact same characteristics using the Echo
+software. Default is (192, 128) (twice the resolution of a
+1536-well plate). The aspect ratio of the original image is always
+automatically conserved.</p>
+</div></blockquote>
+<p><strong>transfer_volume</strong></p>
+<blockquote>
+<div><p>How many microliters of liquid should be used for each pixel.
+The default, 2.5, works very well and is also the lowest possible
+value on our Echo.</p>
+</div></blockquote>
+<p><strong>pigment_well_capacity</strong></p>
+<blockquote>
+<div><p>Volume in microliters that one pigments well can dispense. The
+function raises an error if the total number of pixels for one
+color exceeds the content of one pigment well, i.e. if</p>
+<blockquote>
+<div><p>transfer_volume * number_pixels &gt; well_capacity</p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>transfer_rate</strong></p>
+<blockquote>
+<div><p>Average number of droplet transfers per second, used only to
+give an estimate of the time required for printing.</p>
+</div></blockquote>
+<p><strong>quantified_image_filename</strong></p>
+<blockquote class="last">
+<div><p>If a path is provided, the quantified picture will be saved as an
+image file under this name.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 </div>
 
@@ -169,7 +276,7 @@ using yeast, coli, ...</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2014, Zulko.
+        &copy; Copyright 2015, Edinburgh Genome Foundry.
 
     </p>
   </div>
