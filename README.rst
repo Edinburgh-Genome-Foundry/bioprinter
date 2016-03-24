@@ -1,17 +1,17 @@
 BioPrinter
 ===========
 
-Bioprinter (webpage _here) is a Python module to produce living art. It transforms an image into files that a liquid dispenser can use to *print* the image to a plate using pigmented yeast or bacteria.
+Bioprinter (webpage here_) is a Python module to produce living art. It transforms an image into files that a liquid dispenser can use to *print* the image to a plate using pigmented yeast or bacteria.
 
 Here are two examples of bio-art:
 
-.. figure:: images/bioprint_dolly.jpeg
+.. figure:: https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/bioprinter/master/docs/images/bioprint_dolly.jpeg
     :align: center
 
     Dolly drawn with baker yeast (white), violacein-producing yeast (black), and carotene-producing yeast (orange)
 
 
-.. figure:: images/bioprint_england.jpeg
+.. figure:: https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/bioprinter/master/docs/images/bioprint_england.jpeg
     :align: center
 
     England flag drawn with 3 different strains of the bacterium *E. coli*.
@@ -39,7 +39,7 @@ Usage
 
 In the same folder as your code, place an image. It can have any resolution, but keep in mind that the width/height ratio of the plate it is printed on is 1.5. Make sure that a specific color is used to mark the un-pigmented background of the image, here we use blue:
 
-.. figure:: images/dolly.jpeg
+.. figure:: https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/bioprinter/master/docs/images/dolly.jpeg
     :align: center
 
 Then write the following code in `dolly.py`:
