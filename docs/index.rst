@@ -8,7 +8,7 @@ Bioprinter
 .. raw:: html
 
     <a href="https://twitter.com/share" class="twitter-share-button"
-    data-text="MoviePy - Video editing with Python" data-size="large" data-hashtags="Bioprinting">Tweet
+    data-text="BioPrinter - A Python module for printing with living matter" data-size="large" data-hashtags="Bioprinting">Tweet
     </a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
     if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
