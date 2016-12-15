@@ -1,6 +1,6 @@
 from bioprinter import bioprint
 bioprint(
-    image_filename="../docs/images/dolly.jpeg",
+    image_filename="../docs/_static/images/dolly.jpeg",
     output_filename="dolly.csv",
     bg_color=[0, 0, 255], # blue background represents empty wells
     pigments_wells={"A1": [0, 0, 0],  # black yeast in source well A1

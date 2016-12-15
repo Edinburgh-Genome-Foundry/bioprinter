@@ -5,13 +5,13 @@ Bioprinter (webpage here_ ) is a Python module to produce living art. It transfo
 
 Here are two examples of bio-art:
 
-.. figure:: https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/bioprinter/master/docs/images/bioprint_dolly.jpeg
+.. figure:: https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/bioprinter/master/docs/_static/images/bioprint_dolly.jpeg
     :align: center
 
     Dolly drawn with baker yeast (white), violacein-producing yeast (black), and carotene-producing yeast (orange)
 
 
-.. figure:: https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/bioprinter/master/docs/images/bioprint_england.jpeg
+.. figure:: https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/bioprinter/master/docs/_static/images/bioprint_england.jpeg
     :align: center
 
     England flag drawn with 3 different strains of the bacterium *E. coli*.
@@ -39,7 +39,7 @@ Usage
 
 In the same folder as your code, place an image. It can have any resolution, but keep in mind that the width/height ratio of the plate it is printed on is 1.5. Make sure that a specific color is used to mark the un-pigmented background of the image, here we use blue:
 
-.. figure:: https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/bioprinter/master/docs/images/dolly.jpeg
+.. figure:: https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/bioprinter/master/docs/_static/images/dolly.jpeg
     :align: center
 
 Then write the following code in ``dolly.py``:
@@ -47,7 +47,7 @@ Then write the following code in ``dolly.py``:
     from bioprinter import bioprint
 
     bioprint(
-        image_filename="../docs/images/dolly.jpeg",
+        image_filename="../docs/_static/images/dolly.jpeg",
         output_filename="dolly.csv",
         bg_color=[0, 0, 255], # blue background represents empty wells
         pigments_wells={"A1": [0, 0, 0],  # black yeast in source well A1
