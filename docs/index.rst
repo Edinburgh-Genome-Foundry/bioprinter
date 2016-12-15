@@ -1,33 +1,24 @@
 
 
 
-Bioprinter
-===========
+Bioprinter Documentation
+=========================
 
-
-.. raw:: html
-
-    <a href="https://twitter.com/share" class="twitter-share-button"
-    data-text="BioPrinter - A Python module for printing with living matter" data-size="large" data-hashtags="Bioprinting">Tweet
-    </a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
-    if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
-    fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-    </script>
-    <iframe src="http://ghbtns.com/github-btn.html?user=Edinburgh-Genome-Foundry&repo=bioprinter&type=watch&count=true&size=large"
-    allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px" margin-bottom="30px"></iframe>
+.. image:: _static/images/title.png
+   :width: 550px
+   :align: center
 
 Bioprinter is a Python module to produce living art. It transforms an image into files that a liquid dispenser can use to *print* the image to a plate using pigmented yeast or bacteria.
 
 Here are two examples of bio-art:
 
-.. figure:: images/bioprint_dolly.jpeg
+.. figure:: _static/images/bioprint_dolly.jpeg
     :align: center
 
     Dolly drawn with baker yeast (white), violacein-producing yeast (black), and carotene-producing yeast (orange)
 
 
-.. figure:: images/bioprint_england.jpeg
+.. figure:: _static/images/bioprint_england.jpeg
     :align: center
 
     England flag drawn with 3 different strains of the bacterium *E. coli*.
@@ -35,9 +26,8 @@ Here are two examples of bio-art:
 
 Bioprinter is released on Github_ under the MIT licence (¢ Edinburgh Genome Foundry), everyone is welcome to contribute !
 
-Bioprinter was written at the Edinburgh Genome Foundry by Zulko_ after an original idea and Matlab code by Mike Shen (`Mike's project on Github <https://github.com/mshen5/BioPointillism>`_).
-
-
+Bioprinter was written at the Edinburgh Genome Foundry by Zulko_ after an original idea
+and Matlab code by Mike Shen at the Boeke Lab (`Mike's project on Github <https://github.com/mshen5/BioPointillism>`_).
 
 
 Installation
@@ -57,7 +47,7 @@ Usage
 
 In the same folder as your code, place an image. It can have any resolution, but keep in mind that the width/height ratio of the plate it is printed on is 1.5. Make sure that a specific color is used to mark the un-pigmented background of the image, here we use blue:
 
-.. figure:: images/dolly.jpeg
+.. figure:: _static/images/dolly.jpeg
     :align: center
 
 Then write the following code in ``dolly.py``:
@@ -76,16 +66,31 @@ Then write the following code in ``dolly.py``:
 
 Execute in a terminal with ``python dolly.py``. This will produce a ``dolly.csv`` file as well as a preview image of the final printing (so that you can check if the image looks good at this low resolution).
 
-.. figure:: images/dolly_preview.png
+.. figure:: _static/images/dolly_preview.png
     :align: center
 
 Prepare a source plate with the right pigmented yeasts in wells A1, A2, A3, use an agar plate as the destination plate, and feed ``dolly.csv`` to the `Labcyte Echo <http://www.labcyte.com/products/liquidhandling/echo-555-liquid-handler>`_. Once the printing is finished, incubate 2 days at 30C (it would be one day at 37C for bacteria). Enjoy the result !
-
 
 Reference manual
 -----------------
 
 .. autofunction:: bioprinter.bioprint
+
+.. toctree::
+    :maxdepth: 1
+    self
+
+.. raw:: html
+
+    <a href="https://twitter.com/share" class="twitter-share-button"
+    data-text="BioPrinter - A Python module for printing with living matter" data-size="large" data-hashtags="Bioprinting">Tweet
+    </a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+    if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+    fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
+    <iframe src="http://ghbtns.com/github-btn.html?user=Edinburgh-Genome-Foundry&repo=bioprinter&type=watch&count=true&size=large"
+    allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px" margin-bottom="30px"></iframe>
 
 .. _Zulko: https://github.com/Zulko/
 .. _Github: https://github.com/Edinburgh-Genome-Foundry/bioprinter

@@ -102,6 +102,22 @@ sys.path.append("../bioprinter")
 html_theme = "sphinx_rtd_theme" # formerly 'kr'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+if not on_rtd:  # only import and set the theme if we're building docs locally
+    import sphinx_rtd_theme
+    html_theme = 'sphinx_rtd_theme'
+    html_theme_path = sphinx_rtd_theme.get_html_theme_path()
+    def setup(app):
+        app.add_stylesheet('css/main.css')
+else:
+    html_context = {
+      'css_files': [
+          'https://media.readthedocs.org/css/sphinx_rtd_theme.css',
+          'https://media.readthedocs.org/css/readthedocs-doc-embed.css',
+          '_static/css/main.css',
+      ],
+    }
+
 #sys.path.append(os.path.abspath('_themes'))
 #html_theme_path = ['_themes']
 #html_theme = 'jdoctest'
@@ -264,7 +280,7 @@ texinfo_documents = [
 epub_title = u'bioprinter'
 epub_author = u'Zulko'
 epub_publisher = u'Zulko'
-epub_copyright = u'2016, Zulko'
+epub_copyright = u'2016, Edinburgh Genome Foundry'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
