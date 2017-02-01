@@ -14,7 +14,7 @@ from collections import Counter
 import csv
 
 import numpy as np
-from scipy.misc import imresize, imread, imsave
+from PIL import Image
 
 def _rownumber_to_rowname(num):
     """Return the row name corresponding to the row number.
@@ -104,13 +104,13 @@ def bioprint(image_filename, output_filename, bg_color, pigments_wells,
     resolution_w, resolution_h = resolution
     resolution_ratio = 1.0 * resolution_w / resolution_h
 
-    image = imread(image_filename)[:, :, :3]
-    height, width, _ = image.shape
+    image = Image.open(image_filename)
+    height, width = image.size
 
     # IF THE PICTURE IS HIGHER THAN WIDE, CHANGE THE ORIENTATION
 
     if height > width:
-        image = image.swapaxes(1, 0)[::-1]
+        image = image.rotate(90)#.swapaxes(1, 0)[::-1]
         height, width = width, height
 
     # RESIZE THE PICTURE TO THE PROVIDED RESOLUTION (KEEP THE ASPECT RATIO)
@@ -119,10 +119,11 @@ def bioprint(image_filename, output_filename, bg_color, pigments_wells,
     if (height > resolution_h) or (width > resolution_w):
         if image_ratio > resolution_ratio:
             new_size = (int(resolution_w / image_ratio), resolution_w)
-            image = imresize(image, new_size)
+            image = image.resize(new_size)
         else:
             new_size = (resolution_h, int(resolution_h * image_ratio))
             image = imresize(image, new_size)
+    image = np.array(image)
 
     # QUANTIFY THE ORIGINAL IMAGE WITH THE PROVIDED PIGMENTS COLORS
 
@@ -171,4 +172,5 @@ def bioprint(image_filename, output_filename, bg_color, pigments_wells,
 
     if quantified_image_filename is not None:
         image_quantified = np.array([colors[y] for y in image_quantnumbers])
-        imsave(quantified_image_filename, image_quantified)
+        pil_image = Image.fromarray(image_quantified.astype('uint8'))
+        pil_image.save(quantified_image_filename)
