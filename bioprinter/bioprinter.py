@@ -24,7 +24,7 @@ def _rownumber_to_rowname(num):
     if num < 26:
         return "ABCDEFGHIJKLMNOPQRSTUVWXYZ"[num]
     else:
-        return "".join([_rownumber_to_rowname(num / 26 - 1),
+        return "".join([_rownumber_to_rowname(int(num / 26) - 1),
                         _rownumber_to_rowname(num % 26)])
 
 
@@ -110,7 +110,7 @@ def bioprint(image_filename, output_filename, bg_color, pigments_wells,
     # IF THE PICTURE IS HIGHER THAN WIDE, CHANGE THE ORIENTATION
 
     if height > width:
-        image = image.rotate(90)#.swapaxes(1, 0)[::-1]
+        image = image.rotate(90, expand=1)
         height, width = width, height
 
     # RESIZE THE PICTURE TO THE PROVIDED RESOLUTION (KEEP THE ASPECT RATIO)
@@ -122,8 +122,9 @@ def bioprint(image_filename, output_filename, bg_color, pigments_wells,
             image = image.resize(new_size)
         else:
             new_size = (resolution_h, int(resolution_h * image_ratio))
-            image = imresize(image, new_size)
+            image = image.resize(image, new_size)
     image = np.array(image)
+
 
     # QUANTIFY THE ORIGINAL IMAGE WITH THE PROVIDED PIGMENTS COLORS
 
@@ -148,11 +149,11 @@ def bioprint(image_filename, output_filename, bg_color, pigments_wells,
 
     # WRITE THE CSV
     # TO DO: write the wells in an order that miminizes the Echo's travels.
-    with open(output_filename, 'wb') as csvfile:
+    with open(output_filename, 'w') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
-        writer.writerow(['Source Well',
-                         'Destination Well',
-                         'Transfer Volume'])
+        writer.writerow([u'Source Well',
+                         u'Destination Well',
+                         u'Transfer Volume'])
         for i, row in enumerate(image_quantnumbers):
             for j, color in enumerate(row):
                 if color != 0:

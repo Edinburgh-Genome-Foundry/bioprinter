@@ -1,5 +1,4 @@
 from bioprinter import bioprint
-import os
 
 bioprint(
     image_filename="../tests/assets/dolly.jpeg",
