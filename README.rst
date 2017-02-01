@@ -1,5 +1,8 @@
 BioPrinter
 ===========
+.. image:: https://travis-ci.org/Edinburgh-Genome-Foundry/bioprinter.svg?branch=master
+   :target: https://travis-ci.org/Edinburgh-Genome-Foundry/bioprinter
+   :alt: Travis CI build status (Python 3)
 
 Bioprinter (webpage here_ ) is a Python module to produce living art. It transforms an image into files that a liquid dispenser can use to *print* the image to a plate using pigmented yeast or bacteria.
 
@@ -21,9 +24,7 @@ Bioprinter is released on Github_ under the MIT licence (¢ Edinburgh Genome Fou
 Bioprinter was written at the Edinburgh Genome Foundry by Zulko_ after an original idea and Matlab code by Mike Shen (`Mike's project on Github <https://github.com/mshen5/BioPointillism>`_).
 
 
-.. image:: https://travis-ci.org/Edinburgh-Genome-Foundry/bioprinter.svg?branch=master
-   :target: https://travis-ci.org/Edinburgh-Genome-Foundry/bioprinter
-   :alt: Travis CI build status (Python 3)
+
 
 Installation
 --------------
