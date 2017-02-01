@@ -21,7 +21,7 @@ Bioprinter is released on Github_ under the MIT licence (¢ Edinburgh Genome Fou
 Bioprinter was written at the Edinburgh Genome Foundry by Zulko_ after an original idea and Matlab code by Mike Shen (`Mike's project on Github <https://github.com/mshen5/BioPointillism>`_).
 
 
-.. |Py3.6| image:: https://travis-ci.org/Edinburgh-Genome-Foundry/bioprinter.svg?branch=master
+.. image:: https://travis-ci.org/Edinburgh-Genome-Foundry/bioprinter.svg?branch=master
    :target: https://travis-ci.org/Edinburgh-Genome-Foundry/bioprinter
    :alt: Travis CI build status (Python 3)
 
