@@ -43,7 +43,9 @@ In the same folder as your code, place an image. It can have any resolution, but
     :align: center
 
 Then write the following code in ``dolly.py``:
-::
+
+.. code:: python
+
     from bioprinter import bioprint
 
     bioprint(

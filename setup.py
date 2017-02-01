@@ -11,6 +11,6 @@ setup(name='BioPrinter',
       description='',
       long_description=open('README.rst').read(),
       license='see LICENSE.txt',
-      keywords="bioprinter pointillism",
+      keywords="bioprinter pointillism living art",
       packages=find_packages(exclude='docs'),
-      install_requires=['numpy', 'scikit-image'])
+      install_requires=['numpy', 'scikit-image', 'pytest'])
