@@ -14,11 +14,7 @@ from collections import Counter
 import csv
 
 import numpy as np
-
-from skimage.io import imread, imsave
-from skimage.transform import resize
-from skimage.color import rgb2lab
-
+from scipy.misc import imresize, imread, imsave
 
 def _rownumber_to_rowname(num):
     """Return the row name corresponding to the row number.
@@ -104,7 +100,7 @@ def bioprint(image_filename, output_filename, bg_color, pigments_wells,
 
     # Constants of the problem
     colors = np.vstack([np.array(bg_color),
-                        np.array(pigments_colors)]).astype(float)/255
+                        np.array(pigments_colors)]).astype(float)
     resolution_w, resolution_h = resolution
     resolution_ratio = 1.0 * resolution_w / resolution_h
 
@@ -123,21 +119,16 @@ def bioprint(image_filename, output_filename, bg_color, pigments_wells,
     if (height > resolution_h) or (width > resolution_w):
         if image_ratio > resolution_ratio:
             new_size = (int(resolution_w / image_ratio), resolution_w)
-            image = resize(image, new_size)
+            image = imresize(image, new_size)
         else:
             new_size = (resolution_h, int(resolution_h * image_ratio))
-            image = resize(image, new_size)
+            image = imresize(image, new_size)
 
     # QUANTIFY THE ORIGINAL IMAGE WITH THE PROVIDED PIGMENTS COLORS
 
-    # First convert the image and pigments colors the LAB color space
-    image_lab = rgb2lab(image)
-    colors_shape = (1, len(colors), 3)
-    colors_lab = rgb2lab(colors.reshape(colors_shape))[0]
-
     image_color_distances = np.dstack([
-        ((image_lab - color_lab.reshape((1, 1, 3)))**2).sum(axis=2)
-        for color_lab in colors_lab
+        ((1.0*image - color.reshape((1, 1, 3)))**2).sum(axis=2)
+        for color in colors
     ])
     # now image_color_distances[x,y,i] represents the distance between color
     # i and the color of the image pixel at [x,y].

@@ -13,4 +13,4 @@ setup(name='BioPrinter',
       license='see LICENSE.txt',
       keywords="bioprinter pointillism living art",
       packages=find_packages(exclude='docs'),
-      install_requires=['numpy', 'scikit-image', 'pytest'])
+      install_requires=['numpy', 'scipy', 'pytest'])
