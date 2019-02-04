@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 exec(open('bioprinter/version.py').read())  # loads __version__
 
-setup(name='BioPrinter',
+setup(name='bioprinter',
       version=__version__,
       author='Zulko',
       description='',

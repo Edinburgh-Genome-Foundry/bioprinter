@@ -23,12 +23,8 @@ Bioprinter is released on Github_ under the MIT licence (¢ Edinburgh Genome Fou
 
 Bioprinter was written at the Edinburgh Genome Foundry by Zulko_ after an original idea and Matlab code by Mike Shen (`Mike's project on Github <https://github.com/mshen5/BioPointillism>`_).
 
-
-
-
 Installation
 --------------
-
 
 
 If you have PIP installed: ::
