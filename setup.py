@@ -1,7 +1,4 @@
-import ez_setup
-ez_setup.use_setuptools()
-
-from setuptools import setup, find_packages
+from setuptools import setup
 
 exec(open('bioprinter/version.py').read())  # loads __version__
 
@@ -12,5 +9,5 @@ setup(name='BioPrinter',
       long_description=open('README.rst').read(),
       license='see LICENSE.txt',
       keywords="bioprinter pointillism living art",
-      packages=find_packages(exclude='docs'),
+      packages=['bioprinter'],
       install_requires=['numpy', 'Pillow', 'pytest'])
