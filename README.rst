@@ -19,6 +19,8 @@ Here are two examples of bio-art:
 
     England flag drawn with 3 different strains of the bacterium *E. coli*.
 
+These bio-prints (and many others!) were presented at the University of Edinburgh's SynthSys Open days 2016 (strain selection and acoustic printing by Paulina Kanigowska).
+
 Bioprinter is released on Github_ under the MIT licence (¢ Edinburgh Genome Foundry), everyone is welcome to contribute !
 
 Bioprinter was written at the Edinburgh Genome Foundry by Zulko_ after an original idea and Matlab code by Mike Shen (`Mike's project on Github <https://github.com/mshen5/BioPointillism>`_).
