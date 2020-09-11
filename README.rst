@@ -1,5 +1,13 @@
+.. raw:: html
+
+    <p align="center">
+    <img alt="Bioprinter logo" title="Bioprinter" src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/bioprinter/master/docs/_static/images/title.png" width="550">
+    <br /><br />
+    </p>
+
+
 BioPrinter
-===========
+==========
 
 .. image:: https://travis-ci.org/Edinburgh-Genome-Foundry/bioprinter.svg?branch=master
    :target: https://travis-ci.org/Edinburgh-Genome-Foundry/bioprinter
