@@ -14,4 +14,3 @@ https://github.com/mshen5/BioPointillism
 from .bioprinter import bioprint
 
 from .version import __version__
-
