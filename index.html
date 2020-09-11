@@ -1,56 +1,56 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Bioprinter Documentation &mdash; bioprinter 0.1.0 documentation</title>
+  <title>Bioprinter Documentation &mdash; bioprinter 0.1.3 documentation</title>
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/main.css" type="text/css" />
+
+  
+  
+  
   
 
   
-
-  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/css/main.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="bioprinter 0.1.0 documentation" href="#"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
-            <a href="#" class="icon icon-home"> bioprinter
+            <a href="#" class="icon icon-home" alt="Documentation Home"> bioprinter
           
 
           
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.1.0
+                0.1.3
               </div>
             
           
@@ -77,12 +77,16 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
             
-                <!-- Local TOC -->
-                <div class="local-toc"><ul>
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Bioprinter Documentation</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#usage">Usage</a></li>
@@ -94,40 +98,61 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="#">bioprinter</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">bioprinter</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="#">Docs</a> &raquo;</li>
-      
-    <li>Bioprinter Documentation</li>
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Bioprinter Documentation</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -136,127 +161,107 @@
   <div class="section" id="bioprinter-documentation">
 <h1>Bioprinter Documentation<a class="headerlink" href="#bioprinter-documentation" title="Permalink to this headline">¶</a></h1>
 <a class="reference internal image-reference" href="_images/title.png"><img alt="_images/title.png" class="align-center" src="_images/title.png" style="width: 550px;" /></a>
-<p>Bioprinter is a Python module to produce living art. It transforms an image into files that a liquid dispenser can use to <em>print</em> the image to a plate using pigmented yeast or bacteria.</p>
+<p>Bioprinter is a Python package for producing living art. It transforms an image into files that a liquid dispenser can use to <em>print</em> the image to a plate using pigmented yeast or bacteria.</p>
 <p>Here are two examples of bio-art:</p>
 <div class="figure align-center" id="id1">
 <img alt="_images/bioprint_dolly.jpeg" src="_images/bioprint_dolly.jpeg" />
-<p class="caption"><span class="caption-text">Dolly drawn with baker yeast (white), violacein-producing yeast (black), and carotene-producing yeast (orange)</span></p>
+<p class="caption"><span class="caption-text">Dolly drawn with baker yeast (white), violacein-producing yeast (black), and carotene-producing yeast (orange).</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-center" id="id2">
 <img alt="_images/bioprint_england.jpeg" src="_images/bioprint_england.jpeg" />
-<p class="caption"><span class="caption-text">England flag drawn with 3 different strains of the bacterium <em>E. coli</em>.</span></p>
+<p class="caption"><span class="caption-text">England flag drawn with 3 different strains of the bacterium <em>E. coli</em>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>Bioprinter is released on <a class="reference external" href="https://github.com/Edinburgh-Genome-Foundry/bioprinter">Github</a> under the MIT licence (¢ Edinburgh Genome Foundry), everyone is welcome to contribute !</p>
+<p>Bioprinter is released on <a class="reference external" href="https://github.com/Edinburgh-Genome-Foundry/bioprinter">Github</a> under the MIT licence (Copyright 2015 Edinburgh Genome Foundry), everyone is welcome to contribute!</p>
 <p>Bioprinter was written at the Edinburgh Genome Foundry by <a class="reference external" href="https://github.com/Zulko/">Zulko</a> after an original idea
-and Matlab code by Mike Shen at the Boeke Lab (<a class="reference external" href="https://github.com/mshen5/BioPointillism">Mike&#8217;s project on Github</a>).</p>
+and Matlab code by Mike Shen at the Boeke Lab (<a class="reference external" href="https://github.com/mshen5/BioPointillism">project on Github</a>).</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>If you have PIP installed:</p>
-<div class="highlight-python"><div class="highlight"><pre>(sudo) pip install ez_setup bioprinter
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">sudo</span><span class="p">)</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">ez_setup</span> <span class="n">bioprinter</span>
 </pre></div>
 </div>
 <p>Or unzip the source code in a directory and type in a terminal:</p>
-<div class="highlight-python"><div class="highlight"><pre>sudo python setup.py install
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<p>In the same folder as your code, place an image. It can have any resolution, but keep in mind that the width/height ratio of the plate it is printed on is 1.5. Make sure that a specific color is used to mark the un-pigmented background of the image, here we use blue:</p>
+<p>The image file to be printed can have any resolution, but note that the width/height ratio of the plate the image is printed on is 1.5. Ensure that a specific color is used to mark the un-pigmented background of the image, here we use blue:</p>
 <div class="figure align-center">
 <img alt="_images/dolly.jpeg" src="_images/dolly.jpeg" />
 </div>
-<p>Then write the following code in <code class="docutils literal"><span class="pre">dolly.py</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">bioprinter</span> <span class="kn">import</span> <span class="n">bioprint</span>
+<p>Run the following code in Python or save in <code class="docutils literal notranslate"><span class="pre">dolly.py</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bioprinter</span> <span class="kn">import</span> <span class="n">bioprint</span>
 
 <span class="n">bioprint</span><span class="p">(</span>
-    <span class="n">image_filename</span><span class="o">=</span><span class="s">&quot;../docs/images/dolly.jpeg&quot;</span><span class="p">,</span>
-    <span class="n">output_filename</span><span class="o">=</span><span class="s">&quot;dolly.csv&quot;</span><span class="p">,</span>
-    <span class="n">bg_color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="c"># blue background represents empty wells</span>
-    <span class="n">pigments_wells</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;A1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>  <span class="c"># black yeast in source well A1</span>
-                    <span class="s">&quot;A2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">250</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>  <span class="c"># orange yeast in well A2</span>
-                    <span class="s">&quot;A3&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">]},</span>  <span class="c"># white yeast in well A3</span>
-    <span class="n">quantified_image_filename</span><span class="o">=</span><span class="s">&quot;dolly_preview.jpeg&quot;</span>
+    <span class="n">image_filename</span><span class="o">=</span><span class="s2">&quot;/path/to/image/dolly.jpeg&quot;</span><span class="p">,</span>
+    <span class="n">output_filename</span><span class="o">=</span><span class="s2">&quot;dolly.csv&quot;</span><span class="p">,</span>
+    <span class="n">bg_color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>  <span class="c1"># blue background represents empty wells</span>
+    <span class="n">pigments_wells</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;A1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>        <span class="c1"># black yeast in source well A1</span>
+                    <span class="s2">&quot;A2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">250</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>   <span class="c1"># orange yeast in well A2</span>
+                    <span class="s2">&quot;A3&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">]},</span> <span class="c1"># white yeast in well A3</span>
+    <span class="n">quantified_image_filename</span><span class="o">=</span><span class="s2">&quot;dolly_preview.jpeg&quot;</span>
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>Execute in a terminal with <code class="docutils literal"><span class="pre">python</span> <span class="pre">dolly.py</span></code>. This will produce a <code class="docutils literal"><span class="pre">dolly.csv</span></code> file as well as a preview image of the final printing (so that you can check if the image looks good at this low resolution).</p>
+<p>The saved script can be executed in a terminal with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">dolly.py</span></code>. This will produce a <code class="docutils literal notranslate"><span class="pre">dolly.csv</span></code> file as well as a preview image of the final printing (so that you can check if the image looks good at this low resolution).</p>
 <div class="figure align-center">
 <img alt="_images/dolly_preview.png" src="_images/dolly_preview.png" />
 </div>
-<p>Prepare a source plate with the right pigmented yeasts in wells A1, A2, A3, use an agar plate as the destination plate, and feed <code class="docutils literal"><span class="pre">dolly.csv</span></code> to the <a class="reference external" href="http://www.labcyte.com/products/liquidhandling/echo-555-liquid-handler">Labcyte Echo</a>. Once the printing is finished, incubate 2 days at 30C (it would be one day at 37C for bacteria). Enjoy the result !</p>
+<p>Prepare a source plate with the right pigmented yeasts in wells A1, A2, A3, use an agar plate as the destination plate, and feed <code class="docutils literal notranslate"><span class="pre">dolly.csv</span></code> to the <a class="reference external" href="http://www.labcyte.com/products/liquidhandling/echo-555-liquid-handler">Labcyte Echo</a>. Once the printing is finished, incubate 2 days at 30C (it would be one day at 37C for bacteria). Enjoy the result!</p>
 </div>
 <div class="section" id="reference-manual">
 <h2>Reference manual<a class="headerlink" href="#reference-manual" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="bioprinter.bioprint">
-<code class="descclassname">bioprinter.</code><code class="descname">bioprint</code><span class="sig-paren">(</span><em>image_filename</em>, <em>output_filename</em>, <em>bg_color</em>, <em>pigments_wells</em>, <em>resolution=(192</em>, <em>128)</em>, <em>transfer_volume=2.5</em>, <em>pigment_well_capacity=25000</em>, <em>transfer_rate=150</em>, <em>quantified_image_filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bioprinter.html#bioprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bioprinter.bioprint" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">bioprinter.</code><code class="sig-name descname">bioprint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image_filename</span></em>, <em class="sig-param"><span class="n">output_filename</span></em>, <em class="sig-param"><span class="n">bg_color</span></em>, <em class="sig-param"><span class="n">pigments_wells</span></em>, <em class="sig-param"><span class="n">resolution</span><span class="o">=</span><span class="default_value">192, 128</span></em>, <em class="sig-param"><span class="n">transfer_volume</span><span class="o">=</span><span class="default_value">2.5</span></em>, <em class="sig-param"><span class="n">pigment_well_capacity</span><span class="o">=</span><span class="default_value">25000</span></em>, <em class="sig-param"><span class="n">transfer_rate</span><span class="o">=</span><span class="default_value">150</span></em>, <em class="sig-param"><span class="n">quantified_image_filename</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bioprinter/bioprinter.html#bioprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bioprinter.bioprint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a CSV that can be used in the Echo to print the given picture.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>image_filename</strong></p>
-<blockquote>
-<div><p>The path the image file to be printed. Can be virtually any size
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>image_filename</strong></dt><dd><p>The path the image file to be printed. Can be virtually any size
 and file format, but make sure the image is well adapted to low
 resolution yeast printing. If the picture is higher than wide it will
 be automatically rotated 90 degrees so as to maximize its resolution on
 the plate (the image aspect ratio is conserved).</p>
-</div></blockquote>
-<p><strong>output_filename</strong></p>
-<blockquote>
-<div><p>The name of the CSV file written by the function, that will then
+</dd>
+<dt><strong>output_filename</strong></dt><dd><p>The name of the CSV file written by the function, that will then
 be fed to the Echo.</p>
-</div></blockquote>
-<p><strong>bg_color</strong></p>
-<blockquote>
-<div><p>A triplet (R,G,B) of 0-255 integers indicating which color
+</dd>
+<dt><strong>bg_color</strong></dt><dd><p>A triplet (R,G,B) of 0-255 integers indicating which color
 of the original image represents the background (no pigment)</p>
-</div></blockquote>
-<p><strong>pigments_wells</strong></p>
-<blockquote>
-<div><p>A dictionary of well names and the corresponding pigments. For
-instance {&#8220;A1&#8221;: [0,10,20], &#8220;B1&#8221;:...}. Only one well per pigment
+</dd>
+<dt><strong>pigments_wells</strong></dt><dd><p>A dictionary of well names and the corresponding pigments. For
+instance {“A1”: [0,10,20], “B1”:…}. Only one well per pigment
 is currently supported.</p>
-</div></blockquote>
-<p><strong>resolution</strong></p>
-<blockquote>
-<div><p>Resolution (width, height) of the printing plate. You must define a
+</dd>
+<dt><strong>resolution</strong></dt><dd><p>Resolution (width, height) of the printing plate. You must define a
 plate with these exact same characteristics using the Echo
 software. Default is (192, 128) (twice the resolution of a
 1536-well plate). The aspect ratio of the original image is always
 automatically conserved.</p>
-</div></blockquote>
-<p><strong>transfer_volume</strong></p>
-<blockquote>
-<div><p>How many microliters of liquid should be used for each pixel.
+</dd>
+<dt><strong>transfer_volume</strong></dt><dd><p>How many microliters of liquid should be used for each pixel.
 The default, 2.5, works very well and is also the lowest possible
 value on our Echo.</p>
-</div></blockquote>
-<p><strong>pigment_well_capacity</strong></p>
-<blockquote>
-<div><p>Volume in microliters that one pigments well can dispense. The
+</dd>
+<dt><strong>pigment_well_capacity</strong></dt><dd><p>Volume in microliters that one pigment well can dispense. The
 function raises an error if the total number of pixels for one
 color exceeds the content of one pigment well, i.e. if</p>
 <blockquote>
 <div><p>transfer_volume * number_pixels &gt; well_capacity</p>
 </div></blockquote>
-</div></blockquote>
-<p><strong>transfer_rate</strong></p>
-<blockquote>
-<div><p>Average number of droplet transfers per second, used only to
+</dd>
+<dt><strong>transfer_rate</strong></dt><dd><p>Average number of droplet transfers per second, used only to
 give an estimate of the time required for printing.</p>
-</div></blockquote>
-<p><strong>quantified_image_filename</strong></p>
-<blockquote class="last">
-<div><p>If a path is provided, the quantified picture will be saved as an
+</dd>
+<dt><strong>quantified_image_filename</strong></dt><dd><p>If a path is provided, the quantified picture will be saved as an
 image file under this name.</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <a href="https://twitter.com/share" class="twitter-share-button"
@@ -272,6 +277,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30p
 
 
            </div>
+           
           </div>
           <footer>
   
@@ -280,11 +286,19 @@ allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30p
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015, Edinburgh Genome Foundry.
+        
+        &copy; Copyright 2015, Edinburgh Genome Foundry
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -296,36 +310,15 @@ allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30p
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.1.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>
