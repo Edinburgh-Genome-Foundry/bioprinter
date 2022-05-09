@@ -1,9 +1,9 @@
 BioPrinter
 ==========
 
-.. image:: https://travis-ci.org/Edinburgh-Genome-Foundry/bioprinter.svg?branch=master
-   :target: https://travis-ci.org/Edinburgh-Genome-Foundry/bioprinter
-   :alt: Travis CI build status (Python 3)
+.. image:: https://github.com/Edinburgh-Genome-Foundry/bioprinter/actions/workflows/build.yml/badge.svg
+    :target: https://github.com/Edinburgh-Genome-Foundry/bioprinter/actions/workflows/build.yml
+    :alt: GitHub CI build status
 
 .. image:: https://coveralls.io/repos/github/Edinburgh-Genome-Foundry/bioprinter/badge.svg?branch=master
    :target: https://coveralls.io/github/Edinburgh-Genome-Foundry/bioprinter?branch=master
@@ -35,11 +35,11 @@ Installation
 
 If you have PIP installed: ::
 
-    (sudo) pip install ez_setup bioprinter
+    pip install ez_setup bioprinter
 
 Or unzip the source code in a directory and type in a terminal: ::
 
-    sudo python setup.py install
+    python setup.py install
 
 
 Usage
