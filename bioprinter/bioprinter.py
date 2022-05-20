@@ -112,7 +112,7 @@ def bioprint(
     resolution_ratio = 1.0 * resolution_w / resolution_h
 
     image = Image.open(image_filename)
-    height, width = image.size
+    width, height = image.size
 
     # IF THE PICTURE IS HIGHER THAN WIDE, CHANGE THE ORIENTATION
 
@@ -125,10 +125,10 @@ def bioprint(
     image_ratio = 1.0 * width / height
     if (height > resolution_h) or (width > resolution_w):
         if image_ratio > resolution_ratio:
-            new_size = (int(resolution_w / image_ratio), resolution_w)
+            new_size = (resolution_w, int(resolution_w / image_ratio))
             image = image.resize(new_size)
         else:
-            new_size = (resolution_h, int(resolution_h * image_ratio))
+            new_size = (int(resolution_h * image_ratio), resolution_h)
             image = image.resize(image, new_size)
     image = np.array(image)
 
