@@ -26,7 +26,3 @@ def test_basics():
     assert os.path.exists(quantified_image_filename)
     assert os.path.exists(output_filename)
     assert Image.open(quantified_image_filename).size == (192, 127)
-
-    
-
-
