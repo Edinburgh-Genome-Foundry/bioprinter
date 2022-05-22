@@ -125,11 +125,12 @@ def bioprint(
     image_ratio = 1.0 * width / height
     if (height > resolution_h) or (width > resolution_w):
         if image_ratio > resolution_ratio:
-            new_size = (resolution_w, int(resolution_w / image_ratio))
-            image = image.resize(new_size)
+            new_width = resolution_w
+            new_height = int(np.round(resolution_w / image_ratio))
         else:
-            new_size = (int(resolution_h * image_ratio), resolution_h)
-            image = image.resize(image, new_size)
+            new_width = int(np.round(resolution_h * image_ratio))
+            new_height = resolution_h
+        image = image.resize((new_width, new_height))
     image = np.array(image)
 
     # QUANTIFY THE ORIGINAL IMAGE WITH THE PROVIDED PIGMENTS COLORS
