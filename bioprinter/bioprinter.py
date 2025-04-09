@@ -20,7 +20,7 @@ from PIL import Image
 def _rownumber_to_rowname(num):
     """Return the row name corresponding to the row number.
 
-    For instance 0-> A, 1->B, 2->C, ... 26->AA, 27->AB, ... etc.
+    For instance 0->A, 1->B, 2->C, ... 26->AA, 27->AB, ... etc.
     """
     if num < 26:
         return "ABCDEFGHIJKLMNOPQRSTUVWXYZ"[num]
@@ -41,69 +41,67 @@ def bioprint(
     transfer_rate=150,
     quantified_image_filename=None,
 ):
-    """Generate a CSV that can be used in the Echo to print the given picture.
+    """Generate a CSV file for Echo printing of an image.
 
-    Example
-    =======
-
-        # Let's print the EGF logo !
-        bioprint(
-             image_filename = "egf_logo.jpeg",
-             output_filename = "egf_logo.csv",
-             bg_color=[255,255,255], # The background of the image is white
-             pigments_wells= { "A1": [0,0,0],  # black
-                               "A2": [250,120, 10] }  # orange
-        )
+    This function generates a CSV file for the Echo liquid
+    handler to bioprint a given picture, using specified color wells.
 
     Parameters
-    ==========
+    ----------
+    image_filename : str
+        The path to the image file. The image can be any size and format, but
+        should be suitable for low resolution yeast printing. Images taller than
+        they are wide will automatically be rotated 90 degrees to maximize
+        resolution while preserving aspect ratio.
 
-    image_filename
-      The path the image file to be printed. Can be virtually any size
-      and file format, but make sure the image is well adapted to low
-      resolution yeast printing. If the picture is higher than wide it will
-      be automatically rotated 90 degrees so as to maximize its resolution on
-      the plate (the image aspect ratio is conserved).
+    output_filename : str
+        The name of the CSV file for the Echo.
 
-    output_filename
-      The name of the CSV file written by the function, that will then
-      be fed to the Echo.
+    bg_color : tuple
+        A triplet (R,G,B) of 0-255 integers indicating the background color of the original image (no pigment).
 
-    bg_color
-       A triplet (R,G,B) of 0-255 integers indicating which color
-       of the original image represents the background (no pigment)
+    pigments_wells : dict
+        A dictionary of well names and the corresponding pigments (
+        e.g., {"A1": [0, 10, 20], "B1": [...]}). Only one well per pigment is
+        supported currently.
 
-    pigments_wells
-      A dictionary of well names and the corresponding pigments. For
-      instance {"A1": [0,10,20], "B1":...}. Only one well per pigment
-      is currently supported.
+    resolution : tuple, optional
+        Resolution (width, height) of the printing plate. You must define a
+        plate with these exact same characteristics using the Echo software.
+        Default is (192, 128), equivalent to twice the resolution of a
+        1536-well plate. The aspect ratio of the image is preserved.
 
-    resolution
-      Resolution (width, height) of the printing plate. You must define a
-      plate with these exact same characteristics using the Echo
-      software. Default is (192, 128) (twice the resolution of a
-      1536-well plate). The aspect ratio of the original image is always
-      automatically conserved.
+    transfer_volume : float, optional
+        Volume in microliters of liquid used per pixel, default is 2.5 μL.
 
-    transfer_volume
-      How many microliters of liquid should be used for each pixel.
-      The default, 2.5, works very well and is also the lowest possible
-      value on our Echo.
+    pigment_well_capacity : float
+        Volume in microliters that each pigment well can dispense. Raises an
+        error if required pigment for any color exceeds the content of the well,
+        i.e. if ``transfer_volume * number_pixels > well_capacity``.
 
-    pigment_well_capacity
-      Volume in microliters that one pigment well can dispense. The
-      function raises an error if the total number of pixels for one
-      color exceeds the content of one pigment well, i.e. if
-          transfer_volume * number_pixels > well_capacity
+    transfer_rate : int, optional
+        Average number of droplet transfers per second; used to estimate printing time.
 
-    transfer_rate
-      Average number of droplet transfers per second, used only to
-      give an estimate of the time required for printing.
+    quantified_image_filename : str, optional
+        Path to save the quantified version of the picture as an image file.
 
-    quantified_image_filename
-      If a path is provided, the quantified picture will be saved as an
-      image file under this name.
+    Examples
+    --------
+    Print the EGF logo!
+
+    ::
+
+        bioprint(
+            image_filename="egf_logo.jpeg",
+            output_filename="egf_logo.csv",
+            bg_color=[255, 255, 255],  # White background
+            pigments_wells={
+                "A1": [0, 0, 0],  # Black
+                "A2": [250, 120, 10]  # Orange
+            }
+        )
     """
+
     pigments_wells, pigments_colors = zip(*pigments_wells.items())
 
     # Constants of the problem
