@@ -160,7 +160,7 @@ def bioprint(
     # TO DO: write the wells in an order that miminizes the Echo's travels.
     with open(output_filename, "w") as csvfile:
         writer = csv.writer(csvfile, delimiter=",")
-        writer.writerow([u"Source Well", u"Destination Well", u"Transfer Volume"])
+        writer.writerow(["Source Well", "Destination Well", "Transfer Volume"])
         for i, row in enumerate(image_quantnumbers):
             for j, color in enumerate(row):
                 if color != 0:
