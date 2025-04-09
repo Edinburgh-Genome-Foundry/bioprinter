@@ -1,0 +1,22 @@
+[project]
+name = "bioprinter"
+version = "0.1.5"
+license = "MIT"
+authors = [{ name = "Zulko" }]
+description = "Print pictures with living micro-organisms!"
+readme = "pypi-readme.rst"
+keywords = ["bioprinter", "pointillism", "living", "art"]
+dependencies = ["numpy", "Pillow"]
+
+[project.urls]
+Homepage = "https://github.com/Edinburgh-Genome-Foundry/bioprinter"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+exclude = ["docs"]
