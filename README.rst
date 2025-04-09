@@ -6,9 +6,6 @@
     </p>
 
 
-BioPrinter
-==========
-
 .. image:: https://github.com/Edinburgh-Genome-Foundry/bioprinter/actions/workflows/build.yml/badge.svg
     :target: https://github.com/Edinburgh-Genome-Foundry/bioprinter/actions/workflows/build.yml
     :alt: GitHub CI build status
@@ -34,20 +31,18 @@ Here are two examples of bio-art:
 
 These bio-prints (and many others!) were presented at the University of Edinburgh's SynthSys Open days 2016 (strain selection and acoustic printing by Paulina Kanigowska).
 
-Bioprinter is released on Github_ under the MIT licence (Copyright 2015 Edinburgh Genome Foundry), everyone is welcome to contribute!
+Bioprinter is released on Github_ under the MIT license (Copyright 2015 Edinburgh Genome Foundry, University of Edinburgh), everyone is welcome to contribute!
 
-Bioprinter was written at the Edinburgh Genome Foundry by Zulko_ after an original idea and Matlab code by Mike Shen (`project on Github <https://github.com/mshen5/BioPointillism>`_).
+Bioprinter was written at the Edinburgh Genome Foundry by Zulko_ after an original idea and Matlab code by Mike Shen
+(`project on Github <https://github.com/mshen5/BioPointillism>`_).
+
 
 Installation
 ------------
 
-If you have PIP installed: ::
+Install with PIP: ::
 
-    pip install ez_setup bioprinter
-
-Or unzip the source code in a directory and type in a terminal: ::
-
-    python setup.py install
+    pip install bioprinter
 
 
 Usage
